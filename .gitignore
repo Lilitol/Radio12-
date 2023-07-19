@@ -13,7 +13,6 @@ target/
 *.ipr
 .idea
 .idea/workspace.xml
-*.xml
 
 
 ### Eclipse ###
