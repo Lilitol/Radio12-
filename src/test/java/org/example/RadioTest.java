@@ -15,35 +15,29 @@ class RadioTest {
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void next() {
         Radio radio = new Radio();
-
-        radio.setCurrentStation(8);
+        radio.setCurrentStation(7);
 
         radio.next();
+
+        int expected = 8;
+        int actual = radio.getCurrentStation();
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void prev() {
+        Radio radio = new Radio();
+        radio.setCurrentStation(0);
+
+        radio.prev();
 
         int expected = 9;
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
-    @Test
-    void shouldOverMaxStation1() {
-        Radio radio;
-        radio.setCurrentStation(9);
-        radio.nextStation();
-        Assertions.assertEquals(0, radio.getCurrentStation());
-    }
-    @Test
-    public void test() {
-        int currentStation;
-        Radio radio = new Radio(stationsCount: 20);
 
-        radio.setCurrentStation(17);
-
-        int expected = 17;
-        int actual = radio.getCurrentStation();
-        Assertions.assertEquals(expected, actual);
-    }
 
 }
